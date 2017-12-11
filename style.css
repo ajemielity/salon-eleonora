@@ -1,17 +1,24 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
-  height: 150vh;
   margin: 0;
+}
+
+section {
+  height: 100vh;
+}
+
+h1, h2 {
+  font-family: 'Parisienne', cursive;
+}
+
+h2 {
+  font-size: 40px;
 }
 
 /***** HEADER *****/
 
 header {
-  background-color: rgba(255, 255, 255, 0.76);
+  background-color: white;
   position: fixed;
   top: 0;
   left: 0;
@@ -24,7 +31,7 @@ header {
 }
 
 .header__logo-container {
-  margin-top: 20px;
+  margin-top: 10px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -39,29 +46,72 @@ header {
 nav {
   width: 100%;
   padding: 0 5%;
-  /*  background-color: rgba(0, 0, 0, 0.52);*/
 }
 
 nav ul.header__menu {
-  margin: 0;
-  padding: 15px 0 10px 0;
+  margin: auto;
+  padding: 15px 0 15px 0;
   width: 100%;
   list-style: none;
-  overflow: hidden;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
-nav li a {
+
+.header__menu li {
+  float: left;
+  position: relative;
+}
+
+.header__menu a {
   display: block;
-  padding: 10px 20px;
   text-decoration: none;
   color: black;
   text-transform: uppercase;
-
-
+  font-size: 0.9em;
+  text-align: center;
 }
+
+.header__menu a:hover {
+  color: #fff;
+  background-color: rgba(227, 176, 99, 0.27);
+  text-decoration: none;
+}
+
+.header__menu ul {
+  background-color: #fff; /* for IE7+ */
+  list-style: none;
+  position: absolute;
+  display: none;
+}
+
+.header__menu ul li {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+.header__menu ul a {
+  white-space: nowrap;
+}
+
+/* display dropdown on hover */
+.header__menu li:hover ul {
+  display: block;
+}
+.header__menu li:hover a { /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+  background-color: rgba(227, 176, 99, 0.27);
+  text-decoration: none;
+  color: black;
+}
+.header__menu li:hover ul li a {
+  background-color: white;
+}
+
+.header__menu li:hover ul li a:hover { /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+  background-color: rgba(227, 176, 99, 0.27);
+}
+
 
 
 /**smaller header - shrinked on scroll**/
@@ -94,9 +144,203 @@ header.smaller .header__logo {
 
 header.smaller nav ul.header__menu {
   margin: 0;
-  padding: 0 0 10px 0;
+  padding: 10px 0 10px 0;
+}
+
+/***** end HEADER *****/
+
+
+
+/*HELLO-SECTION*/
+.hello {
+  margin-top: 20vh;
+  background-image: url('images/hello.jpg');
+  background-position:50% 50%;
+  background-size:cover;
+}
+
+/*END HELLO-SECTION*/
+
+/*ABOUT-SECTION*/
+.about {
+  display: flex;
+  flex-direction: row;
+/*  justify-content: space-around;
+  align-items: center;*/
+}
+
+.about__image-container, .about__text-container {
+  height: 100%;
+  width: 50%;
+  text-align: center;
+}
+
+.about__image-container img {
+  margin: 5% auto;
+  height: 90%;
+  width: auto;
+}
+
+.about__text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__text {
+  position: relative;
+  width: 900px;
+  max-width: 80%;
+  border: 2px solid #333;
+  border-top: none;
+  text-align: center;
+  margin: 60px auto;
+}
+
+.about__text h2 {
+  position: relative;
+  margin-top: -20px;
+  display: inline-block;
+  letter-spacing: 4px;
+}
+
+.about__text .top-border{
+  position: absolute;
+  height: 2px;
+  width: 24%;
+  background-color: #333;
+}
+
+ .about__text .right {
+  right: 0;
+}
+
+.about__text .left {
+  left: 0;
+}
+
+/*@media (max-width: 685px) {
+  .top-border {
+    width: 18%;
+  }
+}*/
+
+.about__text p {
+  width: 61%;
+  margin: 20px auto 40px auto;
+  line-height: 30px;
+}
+
+/*end ABOUT-SECTION*/
+
+
+/*OFFER-SECTION*/
+.offer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
 }
 
 
+.offer__text {
+  position: relative;
+  width: 100%;
+  max-width: 80%;
+  border: 2px solid #333;
+  border-top: none;
+  text-align: center;
+  margin: 10% 5%;
+}
 
-/***** end HEADER *****/
+.offer__text h2 {
+  position: relative;
+  margin-top: -20px;
+  display: inline-block;
+  letter-spacing: 4px;
+}
+
+.offer__text .top-border{
+  position: absolute;
+  height: 2px;
+  width: 24%;
+  background-color: #333;
+}
+
+.offer__text .top-border.right {
+  right: 0;
+}
+
+.offer__text .top-border.left {
+  left: 0;
+}
+
+.offer__text .offer__text__hyphens {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offer__text .offer__text__hyphens div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.offer__text .offer__text__hyphens div ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.offer__text .offer__text__hyphens div ul li {
+  list-style: none;
+}
+
+.offer__text .offer__text__hyphens div ul li:before{
+  content: '';
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-image: url("./images/crown.png");
+  background-position:50% 50%;
+  background-size:cover;
+}
+
+
+/*end OFFER-SECTION*/
+
+
+/*CONTACT-SECTION*/
+
+.contact {
+  background-image: url("images/contact-image.png");
+  background-position:50% 50%;
+  background-size:cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__form, .contact__info {
+  height: 60%;
+  width: 30%;
+  background-color: white;
+}
+
+.contact__form {
+  margin-right: 15%;
+}
+
+.contact__info {
+  margin-left: 15%;
+}
+
+
+/*end CONTACT-SECTION*/
