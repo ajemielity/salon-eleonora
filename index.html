@@ -23,7 +23,7 @@
         <a href=# data-lang="Wedding">Ślub</a>
         <ul>
           <li><a href="#" data-lang="Original wedding dresses">Autorskie suknie ślubne</a></li>
-          <li><a href="#" data-lang="Other brands of wedding dresses">Suknie ślubne innych marek</a></li>
+          <li><a href="subpages/other-brands.html" data-lang="Other brands of wedding dresses">Suknie ślubne innych marek</a></li>
           <li><a href="#" data-lang="Commission wedding dresses">Komisowe suknie ślubne</a></li>
           <li><a href="#" data-lang="Accessories">Dodatki</a>
             <ul>
@@ -52,14 +52,16 @@
   </section>
   <section class="about">
     <div class="about__image-container">
-      <img class="about__photo" src="./images/about-photo.jpg" />
+      <img class="about__photo" src="./images/about.jpg" />
     </div>
     <div class="about__text-container">
       <div class="about__text">
         <div class="top-border left"></div>
         <div class="top-border right"></div>
         <h2 data-lang="About as">O nas</h2>
+        <div></div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <button>Czytaj więcej</button>
       </div>
     </div>
   </section>
@@ -87,10 +89,33 @@
     </div>
   </section>
   <section class="contact">
-    <div class="contact__form"></div>
-    <div class="contact__info"></div>
+    <div class="contact__info">
+      <div>
+        <div class="top-border left"></div>
+        <div class="top-border right"></div>
+        <h2 data-lang="Contact">Kontakt</h2>
+        <p>telefon</p>
+        <p>mail</p>
+        <p>ikonka facebook</p>
+        <p>ikonka instagram</p>
+      </div>
+    </div>
+    <div class="contact__form">
+            <form class="form" action="https://formspree.io/ola.jemielity@gmail.com" method="POST">
+            <input id="name" type="text" name="name" placeholder="Imię" data-lang="Name" required>
+            <input id="email" type="email" name="email" placeholder="E-mail" required>
+            <input type="tel" id="number" name="phonenumber" placeholder="Nr telefonu" data-lang="Phone number" required>
+            <input type="hidden" name="_subject" value="Kontakt przez www"/>
+            <textarea id="message" name="message" placeholder="Treść wiadomości" data-lang="Message content"
+                      required></textarea>
+            <input type="submit" value="Wyślij" data-lang="Send">
+          </form>
+    </div>
   </section>
 </main>
+<footer>
+
+</footer>
 
 <script src="./js/shrinkedMenu.js"></script>
 </body>
