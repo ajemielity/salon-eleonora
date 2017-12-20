@@ -6,7 +6,10 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Salon Eleonora</title>
+  <!--google fonts-->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Parisienne&amp;subset=latin-ext" rel="stylesheet">
+  <!--font awesome icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
@@ -20,7 +23,7 @@
     <ul class="header__menu">
       <li><a href=# data-lang="About us">O nas</a></li>
       <li>
-        <a href=# data-lang="Wedding">Ślub</a>
+        <a href=# data-lang="Wedding">Suknie ślubne i dodatki</a>
         <ul>
           <li><a href="#" data-lang="Original wedding dresses">Autorskie suknie ślubne</a></li>
           <li><a href="subpages/other-brands.html" data-lang="Other brands of wedding dresses">Suknie ślubne innych marek</a></li>
@@ -33,9 +36,8 @@
           </li>
         </ul>
       </li>
-      <li><a href='subpages/little-princess.html' data-lang="Little princesses">Mała księżniczka</a>
-      </li>
       <li><a href=# data-lang="Creating the image">Kreowanie wizerunku</a></li>
+      <li><a href='subpages/little-princess.html' data-lang="Little princesses">Mała księżniczka</a></li>
       <li><a href=# data-lang="Sewing workshop">Pracownia krawiecka</a></li>
       <li><a href=# data-lang="Partners">Partnerzy</a></li>
       <li><a href=# data-lang="Contact">Kontakt</a></li>
@@ -44,6 +46,10 @@
 </header>
 <main>
   <section class="hello">
+    <h1>Salon sukien
+      ślubnych
+      i wieczorowych
+      <span>Eleonora</span></h1>
   </section>
   <section class="about">
     <div class="about__image-container">
@@ -61,7 +67,11 @@
     </div>
   </section>
   <section class="offer">
-    <div class="offer__text">
+    <div>
+      <h2 data-lang="Our offer">Nasza oferta</h2>
+    </div>
+
+   <!-- <div class="offer__text">
       <div class="top-border left"></div>
       <div class="top-border right"></div>
       <h2 data-lang="Our offer">Nasza oferta</h2>
@@ -81,7 +91,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div>-->
   </section>
   <section class="contact">
     <div class="contact__info">
@@ -107,11 +117,13 @@
           </form>
     </div>
   </section>
+  <button onclick="topFunction()" id="top-btn" class="top-btn" title="Go to top"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></button>
 </main>
 <footer>
 
 </footer>
 
 <script src="./js/shrinkedMenu.js"></script>
+<script src="./js/topBtn.js"></script>
 </body>
 </html>

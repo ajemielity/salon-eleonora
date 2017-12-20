@@ -45,7 +45,7 @@ header {
 }
 
 nav {
-  width: 100%;
+  width: 80%;
   padding: 0 5%;
 }
 
@@ -161,9 +161,28 @@ header.smaller nav ul.header__menu {
 /*HELLO-SECTION*/
 .hello {
   margin-top: 21vh;
-  background-image: url('images/hello2.png');
+  background-image: url('images/hello1.png');
   background-position:50% 50%;
   background-size:cover;
+}
+
+.hello h1 {
+  width: 20%;
+  color: #171717;
+  padding: 20px;
+  position: absolute;
+  right: 3%;
+  bottom: 4%;
+  font-size: 4em;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.hello h1 span {
+  color: #0e0e0e;
+/*  font-size: 4.5em;*/
+  font-size: 1.5em;
+
 }
 
 /*END HELLO-SECTION*/
@@ -245,13 +264,21 @@ header.smaller nav ul.header__menu {
 /*OFFER-SECTION*/
 .offer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-content: center;
 }
 
+.offer div {
+  height: 60%;
+  width: 100%;
+  background-color: rgba(240, 185, 112, 0.69);
+  text-align: center;
+}
 
-.offer__text {
+
+
+/*.offer__text {
   position: relative;
   width: 100%;
   max-width: 80%;
@@ -317,7 +344,7 @@ header.smaller nav ul.header__menu {
   background-image: url("./images/crown.png");
   background-position:50% 50%;
   background-size:cover;
-}
+}*/
 
 
 /*end OFFER-SECTION*/
@@ -481,6 +508,25 @@ textarea {
   line-height: 100px;
 }
 /*form*/
+
+/*top button*/
+#top-btn{
+  display: none;
+  position: fixed;
+  font-size: 3em;
+  bottom: 10px;
+  right: 10px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: rgba(240, 185, 112, 0.78);
+  cursor: pointer; /* Add a mouse pointer on hover */
+}
+
+.top-btn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
+}
 
 
 
