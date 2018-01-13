@@ -22,27 +22,38 @@
       <ul class="header__menu">
         <li><a href='about-us.html' data-lang="About us">O nas</a></li>
         <li><a href='wedding-dresses.html' data-lang="Wedding dresses">Suknie ślubne</a></li>
-        <li><a href=# data-lang="Little princesses">Mała księżniczka</a></li>
+        <li><a href='little-princess.html' data-lang="Little princesses">Mała księżniczka</a></li>
         <li><a href='creating-the-image.html' data-lang="Creating the image">Kreowanie wizerunku</a></li>
         <li><a href='sewing-workshop.html' data-lang="Sewing workshop">Pracownia krawiecka</a></li>
         <!--<li><a href='partners.html' data-lang="Partners">Partnerzy</a></li>-->
-        <li><a href='contact.html' data-lang="Contact">Kontakt</a></li>
+        <li><a href=# data-lang="Contact">Kontakt</a></li>
       </ul>
 
     </nav>
   </header>
   <main>
-    <section class="little-princess">
-      <img src="../images/little-princess.png" />
-      <div class="about__text-container">
+    <section class="contact">
+      <div class="contact__info">
         <div class="frame-transparent">
-          <div class="frame-transparent__top-border frame-transparent__top-border __left"></div>
+          <div class="frame-transparent__top-border frame-transparent__top-border__left"></div>
           <div class="frame-transparent__top-border frame-transparent__top-border__right"></div>
-          <h2 data-lang="For Little Princess" class="about__title">Mała<br> Księżniczka</h2>
-          <div></div>
-          <p class="about__text">Nasza pracownia z wielką przyjemnoscią wykonuje również suknie dla najmłodszych Klientek - niepowtarzalne sukiensczki do Chrztu, Pierwszj Komunii i na inne uroczści.</p>
-          <p>Można rónież zamowić dodatki - wianki, pelernki itp.</p>
+          <h2 data-lang="Contact">Kontakt</h2>
+          <p>Adres: Gdańsk, ul. Aldony 6</p>
+          <p>Telefon: 794 705 395, 531 985 371</p>
+          <p>E-mail: eleonorabutik@gmail.com</p>
+          <p>Facebook: Salon Eleonora</p>
         </div>
+      </div>
+      <div class="contact__form">
+        <form class="form" action="https://formspree.io/ola.jemielity@gmail.com" method="POST">
+          <input id="name" type="text" name="name" placeholder="Imię" data-lang="Name" required>
+          <input id="email" type="email" name="email" placeholder="E-mail" required>
+          <input type="tel" id="number" name="phonenumber" placeholder="Nr telefonu" data-lang="Phone number" required>
+          <input type="hidden" name="_subject" value="Kontakt przez www" />
+          <textarea id="message" name="message" placeholder="Treść wiadomości" data-lang="Message content" required></textarea>
+          <input type="submit" value="Wyślij" data-lang="Send">
+        </form>
+      </div>
     </section>
   </main>
   <footer>
