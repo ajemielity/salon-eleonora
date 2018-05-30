@@ -5,19 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Salon Eleonora</title>
+  <title>Salon sukien ślubnych i wieczorowych Eleonora</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Parisienne&amp;subset=latin-ext" rel="stylesheet">
+  <!--font awesome icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../style.css" type="text/css">
   <link rel="stylesheet" href="subpages.css" type="text/css">
 </head>
 
 <body>
-  <header id="headerContainer" class="smaller-subpages">
+  <header id="headerContainer" class="subpages-header">
     <div class="header__logo-container">
       <a href="../index.html" class="logo">
-        <img class="header__logo" src="../images/temporary-logo.png" alt="Salon Eleonora">
+        <img class="header__logo" src="../images/logo.svg" alt="Salon Eleonora">
       </a>
     </div>
+    <a id="nav-toggle" href="#"><span></span></a>
     <nav>
       <ul class="header__menu">
         <li><a href='about-us.html' data-lang="About us">O nas</a></li>
@@ -32,20 +35,31 @@
     </nav>
   </header>
   <main>
-    <section class="contact">
+    <section class="contact contact-subpage">
       <div class="contact__info">
         <div class="frame-transparent">
           <div class="frame-transparent__top-border frame-transparent__top-border__left"></div>
           <div class="frame-transparent__top-border frame-transparent__top-border__right"></div>
-          <h2 data-lang="Contact">Kontakt</h2>
-          <p>Adres: Gdańsk, ul. Aldony 6</p>
-          <p>Telefon: 794 705 395, 531 985 371</p>
-          <p>E-mail: eleonorabutik@gmail.com</p>
-          <p>Facebook: Salon Eleonora</p>
+          <h2 class="about__title" data-lang="Contact">Kontakt</h2>
+          <div class="contact-lists">
+            <div class="contact-list">
+              <i class="fa fa-home" aria-hidden="true"></i>
+              <p>Gdańsk, ul. Słupska 61B</p>
+            </div>
+            <div class="contact-list"><i class="fa fa-phone-square" aria-hidden="true"></i>
+              <p>794 705 395, 531 985 371</p>
+            </div>
+            <div class="contact-list"><i class="fa fa-envelope" aria-hidden="true"></i>
+              <p>eleonorabutik@gmail.com</p>
+            </div>
+            <div class="contact-list"><i class="fa fa-facebook-square" aria-hidden="true"></i>
+              <p><a href="https://www.facebook.com/pg/Salon-Eleonora-219170015293150/about/?ref=page_internal">Facebook: Salon Eleonora</a></p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="contact__form">
-        <form class="form" action="https://formspree.io/ola.jemielity@gmail.com" method="POST">
+        <form class="form" action="https://formspree.io/eleonorabutik@gmail.com" method="POST">
           <input id="name" type="text" name="name" placeholder="Imię" data-lang="Name" required>
           <input id="email" type="email" name="email" placeholder="E-mail" required>
           <input type="tel" id="number" name="phonenumber" placeholder="Nr telefonu" data-lang="Phone number" required>
@@ -56,11 +70,9 @@
       </div>
     </section>
   </main>
-  <footer>
-
-  </footer>
 
   <script src="../js/shrinkedMenu.js"></script>
+  <script src="../js/hamburger.js"></script>
 </body>
 
 </html>

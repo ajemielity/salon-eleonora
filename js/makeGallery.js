@@ -4,68 +4,101 @@ let collectionName = document.getElementById('collectionName').innerHTML.toLower
   galleryContainer = document.getElementById('gallery__photos'),
   photo = document.createElement('img'),
   text = document.createElement('p'),
-  addPhotosToGallery = () => {
+  modalInner = document.getElementById('modal-inner'),
+  modalOuter = document.getElementById('modal-outer'),
+  modalPhotoContainer = document.getElementById('modal-photo-container'),
+  modalText = document.getElementById('modal-text'),
+  modalCloseBtn = document.createElement('span'),
+  modalArrowLeft = document.getElementById('modal-arrow-left'),
+  modalArrowRight = document.getElementById('modal-arrow-right'),
+  modalPhoto = document.createElement('img')
+modalPhoto.setAttribute('id', 'modal-photo')
+modalPhoto.setAttribute('class', 'modal-photo')
+addPhotosToGallery = () => {
     items.map(function(item) {
-      let photoContainer = document.createElement('li'),
+      let galleryCollection = document.getElementsByClassName('gallery'),
+        gallery = galleryCollection[0],
+        photoContainer = document.createElement('li'),
         galleryContainer = document.getElementById('gallery__photos'),
         photo = document.createElement('img'),
         text = document.createElement('p')
       photo.src = item.source
-        /*    photoContainer.className = "";*/
       text.innerHTML = item.name
       galleryContainer.appendChild(photoContainer)
       photoContainer.appendChild(photo)
       photoContainer.appendChild(text)
-      photoContainer.setAttribute('onclick', 'addModalWithPhoto()')
 
+      photo.onclick = function() {
+        modalOuter.style.display = "block"
+        modalOuter.appendChild(modalCloseBtn)
+        modalCloseBtn.setAttribute('class', 'close')
+        modalCloseBtn.innerHTML = '&times'
+        modalPhotoContainer.appendChild(modalPhoto)
+        modalPhoto.src = photo.src
+        modalText.innerHTML = text.innerHTML
+          /*modalPhoto.style.textAlign = 'center'
+          modalPhoto.style.margin = 'auto'*/
+      }
 
-      /*
-      document.querySelector('style').textContent +=
-          "@media screen and (min-width:400px) { div { color: red; }}"
-          
-          */
+      modalArrowRight.onclick = function() {
+        let modalPhotoInList = items.filter(function(item) {
+          return item.name === modalText.innerHTML
+        })
+        let nextPhotoForModal = items.filter(function(item) {
+          return item.position === modalPhotoInList[0].position + 1
+        })
+
+        let newPhotoSrc = nextPhotoForModal[0].source,
+          newPhotoText = nextPhotoForModal[0].name
+        modalPhotoInList = []
+        nextPhotoForModal = []
+        modalText.innerHTML = newPhotoText
+        modalPhoto.src = newPhotoSrc
+      }
+
+      modalArrowLeft.onclick = function() {
+        let modalPhotoInList = items.filter(function(item) {
+          return item.name === modalText.innerHTML
+        })
+        let nextPhotoForModal = items.filter(function(item) {
+          return item.position === modalPhotoInList[0].position - 1
+        })
+
+        let newPhotoSrc = nextPhotoForModal[0].source,
+          newPhotoText = nextPhotoForModal[0].name
+        modalPhotoInList = []
+        nextPhotoForModal = []
+        modalText.innerHTML = newPhotoText
+        modalPhoto.src = newPhotoSrc
+      }
+
+      modalCloseBtn.onclick = function() {
+        modalOuter.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modalInner) {
+          modalOuter.style.display = "none";
+        }
+      }
 
 
     })
-
-  },
-  modal = document.getElementById('myModal'),
-  span = document.getElementsByClassName("close")[0],
-  openModal = () => {
-    modal.style.display = "block"
-  },
-  addPhotoToModal = () => {
-    photo.src = item.source
-    modal.appendChild(photo)
   },
   makeGallery = () => {
     switch (collectionName) {
       case 'amber':
         items = dresses.amber
+        console.log('make gallery is done')
         break;
       case 'gold':
         items = dresses.gold
+        console.log('make gallery is done')
         break;
       default:
         return false
     }
-    addPhotosToGallery()
-
-
-    span.onclick = function() {
-      modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-
-  },
-  addModalWithPhoto = () => {
-    openModal()
     addPhotosToGallery()
   }
 

@@ -5,21 +5,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Salon Eleonora</title>
+  <title>Salon sukien ślubnych i wieczorowych Eleonora</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <!--google fonts-->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Parisienne&amp;subset=latin-ext" rel="stylesheet">
   <!--font awesome icons-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="reset.css" type="text/css">
   <link rel="stylesheet" href="style.css" type="text/css">
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
   <header id="headerContainer">
     <div class="header__logo-container">
       <a href="#home" class="logo">
-        <img class="header__logo" src="images/temporary-logo.png" alt="Salon Eleonora">
+        <img class="header__logo" src="images/logo.svg" alt="Salon Eleonora">
       </a>
     </div>
+    <a id="nav-toggle" href="#"><span></span></a>
     <nav>
       <ul class="header__menu">
         <li><a href='subpages/about-us.html' data-lang="About us">O nas</a></li>
@@ -34,12 +38,11 @@
   </header>
   <main>
     <section class="hello">
-      <img src="./images/hello.jpg" />
-      <h1>O czym marzy dziewczyna gdy dorastać zaczyna? Pewnie o wielu rzeczach...<br>My jesteśmy po to, aby spełnić jej marzenia o wspaniałym wyglądzie w dniu Ślubu.</h1>
+      <h1 data-aos="fade" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="1500">O czym marzy dziewczyna gdy dorastać zaczyna?<br>Pewnie o wielu rzeczach...<br>My jesteśmy po to, aby spełnić jej marzenia o wspaniałym wyglądzie w dniu Ślubu.</h1>
     </section>
     <section class="about">
       <div class="about__image-container">
-        <img class="about__photo" src="./images/about1.png" />
+        <img class="about__photo" src="./images/about.jpg" />
       </div>
       <div class="about__text-container">
         <div class="frame-transparent">
@@ -47,64 +50,84 @@
           <div class="frame-transparent__top-border frame-transparent__top-border__right"></div>
           <h2 data-lang="About as" class="about__title">O nas</h2>
           <div></div>
-          <p class="about__text">Nasz salon powstał aby spełniać marzenia kobiet o idealnym wygladzie. Mamy wiedzę, doświadczenie i..cierpliwość, aby wraz z naszą Klientką wybrać suknię, która nie tylko będzie spełnieniem jej marzeń, lecz również podkreśli wszystkie walory
+          <p class="about__text">Nasz salon powstał aby spełniać marzenia kobiet o idealnym wyglądzie. Mamy wiedzę, doświadczenie i... cierpliwość, aby wraz z naszą Klientką wybrać suknię, która nie tylko będzie spełnieniem jej marzeń, lecz również podkreśli wszystkie walory
             jej urody.</p>
           <button><a href='subpages/about-us.html'>Czytaj więcej</a></button>
         </div>
       </div>
     </section>
-    <section class="offer">
+    <section id="offer" class="offer">
       <div>
         <h2 data-lang="Our offer">Nasza oferta</h2>
-        <ul>
-          <li>
-            <p>projektujemy i szyjemy suknie na miarę, a także pomagamy w dobraniu odpowiedniego wzoru i kroju z katalogów</p>
-          </li>
-          <li>
-            <p>profesjonalna stylistka, krawcowa mody ślubnej pomoże Ci wybrać wymarzoną suknię</p>
-          </li>
-          <li>
-            <p>zajmujemy się kreowaniem wizerunku ślubnego Panny Młodej</p>
-          </li>
-          <li>
-            <p>w komisie znajdziesz dla siebie suknię w przystępnej cenie lub oddasz swoją suknię</p>
-          </li>
-          <li>
-            <p>ubieramy Małe Księżniczki na chrzciny, komunie i inne uroczystości</p>
-          </li>
-          <li>
-            <p>nasza pracownia krawiecka oferuje przeróbki odzieży</p>
-          </li>
-        </ul>
+        <div class="offer-list">
+          <ul data-aos="fade-right" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="800">
+            <li>
+              <img class="offer-crown" src="images/crown.svg" alt="" />
+              <p>projektujemy i szyjemy suknie na miarę, a także pomagamy w dobraniu odpowiedniego wzoru i kroju z katalogów</p>
+            </li>
+
+            <li>
+              <img class="offer-crown" src="images/crown.svg" alt="" />
+              <p>zajmujemy się kreowaniem wizerunku ślubnego Panny Młodej</p>
+            </li>
+
+            <li>
+              <img class="offer-crown" src="images/crown.svg" alt="" />
+              <p>ubieramy Małe Księżniczki na chrzciny, komunie i inne uroczystości</p>
+            </li>
+
+          </ul>
+          <ul data-aos="fade-left" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="800">
+            <li>
+              <img class="offer-crown" src="images/crown.svg" alt="" />
+              <p>profesjonalna stylistka, krawcowa mody ślubnej pomoże Ci wybrać wymarzoną suknię</p>
+            </li>
+            <li>
+              <img class="offer-crown" src="images/crown.svg" alt="" />
+              <p>w komisie znajdziesz dla siebie suknię w przystępnej cenie lub oddasz swoją suknię</p>
+            </li>
+            <li>
+              <img class="offer-crown" src="images/crown.svg" alt="" />
+              <p>nasza pracownia krawiecka oferuje przeróbki odzieży</p>
+            </li>
+          </ul>
+        </div>
       </div>
+    </section>
+    <section class="visit">
+      <p>Prosimy o wcześniejsze umawianie wizyt!</p>
     </section>
     <section class="contact">
       <div class="contact__info">
         <div class="frame-transparent">
-          <div class="frame-transparent__top-border frame-transparent__top-border__left"></div>
+          <div class="frame-transparent__top-border frame-transparent__top-border __left"></div>
           <div class="frame-transparent__top-border frame-transparent__top-border__right"></div>
-          <h2 data-lang="Contact">Kontakt</h2>
-          <p>Adres: Gdańsk, ul. Aldony 6</p>
-          <p>Telefon: 794 705 395, 531 985 371</p>
-          <p>E-mail: eleonorabutik@gmail.com</p>
-          <p>Facebook: Salon Eleonora</p>
+          <h2 data-lang="About as" class="about__title">Kontakt</h2>
+          <div class="contact-lists">
+            <div class="contact-list">
+              <i class="fa fa-home" aria-hidden="true"></i>
+              <p>Gdańsk, ul. Słupska 61B</p>
+            </div>
+            <div class="contact-list"><i class="fa fa-phone-square" aria-hidden="true"></i>
+              <p>794 705 395, 531 985 371</p>
+            </div>
+            <div class="contact-list"><i class="fa fa-envelope" aria-hidden="true"></i>
+              <p>eleonorabutik@gmail.com</p>
+            </div>
+            <div class="contact-list"><i class="fa fa-facebook-square" aria-hidden="true"></i>
+              <p><a href="https://www.facebook.com/pg/Salon-Eleonora-219170015293150/about/?ref=page_internal">Facebook: Salon Eleonora</a></p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="contact__form">
-        <!--<form class="form" action=" https://formspree.io/ola.jemielity@gmail.com" method="POST">
+        <form class="form" action="https://formspree.io/eleonorabutik@gmail.com" method="POST">
           <input id="name" type="text" name="name" placeholder="Imię" data-lang="Name" required>
           <input id="email" type="email" name="email" placeholder="E-mail" required>
           <input type="tel" id="number" name="phonenumber" placeholder="Nr telefonu" data-lang="Phone number" required>
           <input type="hidden" name="_subject" value="Kontakt przez www" />
           <textarea id="message" name="message" placeholder="Treść wiadomości" data-lang="Message content" required></textarea>
-          <input type="submit" value="Wyślij" data-lang="Send">
-        </form>-->
-        <form name="my-form" class="form" method="POST">
-          <input id="name" type="text" name="name" placeholder="Imię" data-lang="Name" required>
-          <input id="email" type="email" name="email" placeholder="E-mail" required>
-          <input type="tel" id="phonenumber" name="phonenumber" placeholder="Nr telefonu" data-lang="Phone number" required>
-          <textarea id="message" name="message" placeholder="Treść wiadomości" data-lang="Message content" required></textarea>
-          <button type="button" value="Wyślij" data-lang="Send" onclick="runForm()">
+          <input class="form-submit" type="submit" value="Wyślij" data-lang="Send">
         </form>
       </div>
     </section>
@@ -112,11 +135,12 @@
   </main>
   <footer>
     <img src="images/footer-logo.png" />
-    <p>Salon sukien ślubnych i wieczorowych Eleonora<br> Gdańsk, ul. Aldony 6</p>
+    <p>Salon sukien ślubnych i wieczorowych Eleonora<br> Gdańsk, ul. Słupska 61B</p>
     <p>Zadzwoń do nas:<br> 794 705 395, 531 985 371</p>
     <p>Napisz do nas:<br> eleonorabutik@gmail.com
     </p>
     <p>Znajdź nas na Facebooku<br>
+      <i class="fa fa-facebook-square" aria-hidden="true"></i>
       <a href="https://www.facebook.com/pg/Salon-Eleonora-219170015293150/about/?ref=page_internal">Salon Eleonora</a>
     </p>
 
@@ -124,8 +148,12 @@
   </footer>
 
   <script src="./js/shrinkedMenu.js"></script>
+  <script src="./js/hamburger.js"></script>
+  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="./js/topBtn.js"></script>
-  <script src="./js/runForm.js"></script>
 </body>
 
 </html>

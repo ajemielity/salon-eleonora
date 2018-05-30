@@ -1,3 +1,7 @@
+.wow {
+  visibility: hidden;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -5,11 +9,12 @@
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  color: rgba(0, 0, 0, 0.918);
+  color: black;
+  background-color: #fff8eb;
 }
 
 section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 h1,
@@ -45,7 +50,7 @@ h2 {
 .frame-transparent__top-border {
   position: absolute;
   height: 1px;
-  width: 25%;
+  width: 20%;
   background-color: black;
 }
 
@@ -68,7 +73,7 @@ h2 {
 /***** HEADER *****/
 
 header {
-  background-color: white;
+  background-color: transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -78,6 +83,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 35vh;
 }
 
 .header__logo-container {
@@ -91,10 +97,11 @@ header {
 .header__logo {
   height: 150px;
   width: auto;
+  max-width: 100%;
 }
 
 nav {
-  width: 80%;
+  width: 85%;
   padding: 0 5%;
 }
 
@@ -114,24 +121,17 @@ nav ul.header__menu {
 }
 
 .header__menu a {
+  color: black;
   display: block;
   text-decoration: none;
-  color: black;
   text-transform: uppercase;
   /*  letter-spacing: 1px;*/
   font-size: 0.9em;
+  font-weight: bold;
   text-align: center;
 }
 
-.header__menu a:hover {
-  color: #fff;
-  background-color: rgba(227, 176, 99, 0.27);
-  text-decoration: none;
-}
-
 .header__menu ul {
-  background-color: #fff;
-  /* for IE7+ */
   list-style: none;
   position: absolute;
   display: none;
@@ -141,10 +141,6 @@ nav ul.header__menu {
   float: none;
   margin: 0;
   padding: 0;
-}
-
-.header__menu ul li a {
-  color: red;
 }
 
 .header__menu ul a {
@@ -160,18 +156,8 @@ nav ul.header__menu {
 
 .header__menu li:hover a {
   /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
-  background-color: rgba(227, 176, 99, 0.27);
-  text-decoration: none;
   color: black;
-}
-
-.header__menu li:hover ul li a {
-  background-color: white;
-}
-
-.header__menu li:hover ul li a:hover {
-  /* Here we define the most explicit hover states--what happens when you hover each individual link. */
-  background-color: rgba(227, 176, 99, 0.27);
+  text-decoration: none;
 }
 
 
@@ -191,27 +177,134 @@ header nav ul.header__menu {
 }
 
 header.smaller,
-header.smaller-subpages {
-  background-color: white;
+header.subpages-header {
+  height: 17vh;
+}
+
+header.smaller-main {
+  background-color: #fff8eb9d;
 }
 
 header.smaller .header__logo-container,
-header.smaller-subpages .header__logo-container {
+header.subpages-header .header__logo-container {
   margin-top: 12px;
   border-radius: 0;
   border: 0;
 }
 
 header.smaller .header__logo,
-header.smaller-subpages .header__logo {
+header.subpages-header .header__logo {
   margin-top: 0;
   height: 50px;
 }
 
 header.smaller nav ul.header__menu,
-header.smaller-subpages nav ul.header__menu {
+header.subpages-header hav ul.header__menu {
   margin: 0;
   padding: 10px 0 10px 0;
+}
+
+
+/*hamburger menu*/
+
+#nav-toggle {
+  display: none;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: black;
+  position: absolute;
+  display: block;
+  content: '';
+}
+
+#nav-toggle span:before {
+  top: -10px;
+}
+
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  transition: all 500ms ease-in-out;
+}
+
+#nav-toggle.active span {
+  background-color: transparent;
+}
+
+#nav-toggle.active span:before,
+#nav-toggle.active span:after {
+  top: 0;
+}
+
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+#nav-toggle.active~nav {
+  display: flex;
+}
+
+#nav-toggle.active~nav ul {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(250, 249, 213, 0.767);
+}
+
+@media all and (max-width: 1099px) {
+  nav {
+    width: 90%;
+    letter-spacing: 0;
+    padding: 0
+  }
+}
+
+@media all and (max-width: 880px) {
+  header {
+    justify-content: space-around;
+    align-items: center;
+  }
+  .header__logo {
+    padding: 20px;
+  }
+  header.subpages-header,
+  header.smaller {
+    height: auto;
+  }
+  header.subpages-header .header__logo,
+  header.smaller .header__logo {
+    height: 100px;
+  }
+  ul.header__menu {
+    background-color: transparent
+  }
+  nav {
+    display: none;
+  }
+  #nav-toggle {
+    display: block;
+    padding-bottom: 50px;
+  }
+  nav ul li {
+    padding: 5px;
+  }
 }
 
 
@@ -221,31 +314,65 @@ header.smaller-subpages nav ul.header__menu {
 /*HELLO-SECTION*/
 
 .hello {
-  height: 80vh;
-  margin-top: 35vh;
+  min-height: 105vh;
   text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  text-align: center;
   justify-content: center;
-  align-items: center;
+  position: relative;
   width: 100%;
-  background-color: rgba(233, 211, 198, 0.767)
-}
-
-.hello img {
-  height: 80vh;
+  background-color: rgba(233, 211, 198, 0.767);
+  background-image: url('images/hello.jpg');
+  background-size: cover;
 }
 
 .hello h1 {
-  width: 50%;
+  width: 30%;
   color: #171717;
-  border: 1px solid #171717;
-  margin-left: -100px;
-  margin-top: -35px;
   padding: 20px;
-  font-size: 2em;
-  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  position: absolute;
+  right: 150px;
+  bottom: 100px;
+  margin: auto;
   white-space: pre-line;
+}
+
+@media all and (max-width: 1200px) {
+  .hello {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 35vh;
+  }
+  .hello h1 {
+    right: auto;
+    bottom: auto;
+    margin: auto;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .hello h1 {
+    width: 60%;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .hello h1 {
+    width: 80%;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .hello h1 {
+    width: 85%;
+    padding: auto 0;
+    font-size: 1.5em;
+  }
 }
 
 
@@ -254,7 +381,7 @@ header.smaller-subpages nav ul.header__menu {
 
 /*ABOUT-SECTION*/
 
-.about {
+section.about {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -270,7 +397,7 @@ header.smaller-subpages nav ul.header__menu {
 
 .about__image-container img {
   margin: 5% auto;
-  height: 90%;
+  height: 90vh;
   width: auto;
 }
 
@@ -297,26 +424,48 @@ header.smaller-subpages nav ul.header__menu {
 }
 
 .about button {
-  background-color: white;
-  border: 2px solid #d4af37;
+  background-color: #fff8eb;
+  border: 2px solid rgba(212, 175, 55, 0.78);
   font-weight: bold;
   letter-spacing: 0.5px;
   padding: 15px;
   margin: 20px;
+  transition: all 500ms ease-in-out;
 }
 
 .about button a {
   text-decoration: none;
-  color: #d4af37;
+  color: rgba(212, 175, 55, 0.78);
+  transition: all 500ms ease-in-out;
 }
 
 .about button:hover {
-  background-color: #d4af37;
-  border: 2px solid #d4af37;
+  background-color: rgba(212, 175, 55, 0.78);
+  border: 2px solid rgba(212, 175, 55, 0.78);
 }
 
 .about button:hover a {
   color: white;
+}
+
+@media all and (max-width: 732px) {
+  .about {
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+  }
+  .about__image-container,
+  .about__text-container,
+  .about__image-container img {
+    margin: auto;
+    text-align: center;
+  }
+  .about__image-container,
+  .about__text-container {
+    width: 100%;
+  }
 }
 
 
@@ -326,6 +475,7 @@ header.smaller-subpages nav ul.header__menu {
 /*OFFER-SECTION*/
 
 .offer {
+  min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -333,76 +483,110 @@ header.smaller-subpages nav ul.header__menu {
 }
 
 .offer div {
-  height: 60%;
   width: 100%;
-  background-color: rgba(212, 175, 55, 0.315);
-  ;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 3%;
+}
+
+.offer h2 {
+  margin-bottom: 0;
+}
+
+.offer .offer-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
 }
 
 .offer ul {
   list-style: none;
   display: flex;
   flex-direction: row;
-  width: 90%;
+  flex-wrap: wrap;
   margin-top: 0;
+  width: 40%;
+  padding: auto, 5%;
+  -webkit-padding-start: 0;
 }
 
 .offer ul li {
-  width: 15%;
-  border: 1px solid #d4af37;
-  background-color: #d4af372c;
-  margin-left: 1%;
-  margin-right: 1%;
+  width: 100%;
+  height: 17vh;
+  margin: 15px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .offer ul li p {
   margin: 5%;
-  ;
+  font-size: 0.9em;
+}
+
+.offer-crown {
+  margin-top: 5%;
+  max-width: 10%;
+}
+
+@media all and (max-width: 960px) {
+  .offer ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .offer ul li {
+    width: 75%;
+    margin: 20px auto;
+  }
 }
 
 
 /*end OFFER-SECTION*/
 
-
-/*CONTACT-SECTION*/
-
-.contact {
-  background-image: url("images/contact.png");
-  background-position: 50% 50%;
-  background-size: cover;
+.visit {
+  min-height: 30vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
+.visit p {
+  font-size: 22px;
+  padding-bottom: 50px;
+  margin-top: 0;
+  font-style: italic;
+}
+
+
+/*CONTACT-SECTION*/
+
+.contact {
+  min-height: 90vh;
+  background-image: url("images/contact.jpg");
+  background-position: 50% 60%;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .contact__form,
 .contact__info {
-  height: 60%;
+  min-height: 60vh;
   width: 30%;
-  background-color: rgba(255, 255, 255, 0.69);
+  background-color: #fff8eb9d;
 }
 
-.contact__form {
-  padding-top: 20px;
-}
-
-.contact__info {
-  margin-top: -50px;
-}
-
-.contact__info {
-  margin-right: 15%;
+.contact__info p,
+.contact__form p {
+  font-size: 0.8em;
 }
 
 .contact__form {
@@ -413,57 +597,42 @@ header.smaller-subpages nav ul.header__menu {
   align-items: center;
 }
 
-.contact__form .frame-transparent {
-  height: auto;
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
-/*frame*/
-
-
-/*.contact__info div {
-  position: relative;
-  width: 900px;
-  max-width: 80%;
-  border: 2px solid #333;
-  border-top: none;
-  text-align: center;
-  margin: 60px auto;
+.contact__info a {
+  text-decoration: none;
+  color: black;
 }
 
-.contact__info div h2 {
-  position: relative;
+.contact__info .frame-transparent {
+  width: 80%;
+}
+
+.contact-lists {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: -20px;
-  display: inline-block;
-  letter-spacing: 4px;
 }
 
-.contact__info div .top-border{
-  position: absolute;
-  height: 2px;
-  width: 24%;
-  background-color: #333;
+.contact-list {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.contact__info div .right {
-  right: 0;
+.contact-list p {
+  padding: 0;
 }
-
-.contact__info div .left {
-  left: 0;
-}
-
-!*@media (max-width: 685px) {
-  .top-border {
-    width: 18%;
-  }
-}*!
-
-.contact__info div p {
-  width: 61%;
-  margin: 20px auto 40px auto;
-  line-height: 30px;
-}*/
 
 
 /*form*/
@@ -532,8 +701,8 @@ header.smaller-subpages nav ul.header__menu {
   font-family: 'Open Sans', sans-serif;
 }
 
-button[type="button"] {
-  background-color: #E3B063;
+input[type="submit"] {
+  background-color: #d4af37;
   color: black;
   text-transform: uppercase;
   border: none;
@@ -541,13 +710,24 @@ button[type="button"] {
 }
 
 textarea {
-  height: 150px;
+  height: 120px;
   border: none;
   line-height: 100px;
 }
 
 
 /*form*/
+
+@media all and (max-width: 960px) {
+  .contact {
+    flex-direction: column;
+  }
+  .contact__form,
+  .contact__info {
+    margin: auto;
+    width: 90%;
+  }
+}
 
 
 /*end CONTACT-SECTION*/
@@ -575,6 +755,18 @@ footer p {
   text-align: center;
 }
 
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+@media all and (max-width: 900px) {
+  footer {
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
 
 /*end FOOTER*/
 
@@ -593,10 +785,10 @@ footer p {
   background-color: transparent;
   color: rgba(212, 175, 55, 0.78);
   cursor: pointer;
-  /* Add a mouse pointer on hover */
+  transition: all 500ms ease-in-out;
 }
 
-.top-btn:hover {
-  background-color: #555;
+#top-btn:hover {
+  color: rgb(212, 175, 55);
   /* Add a dark-grey background on hover */
 }
